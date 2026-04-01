@@ -4,11 +4,18 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      HOME_INVENTORY_DB_PASSWORD: ${HOME_INVENTORY_DB_PASSWORD}
     volumes:
-      - mysql_data:/var/lib/mysql
-      - ../db/init:/docker-entrypoint-initdb.d
+      - ~/.db/mysql:/var/lib/mysql
+      - ../db/scripts:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
 
-volumes:
-  mysql_data:
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - ~/.db/redis:/data
+    ports:
+      - "6379:6379"
+
