@@ -1,0 +1,7 @@
+# Environment
+.env
+*.pem
+*.key
+
+# OS
+.DS_Store
