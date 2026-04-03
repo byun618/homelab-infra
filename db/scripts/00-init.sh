@@ -7,5 +7,9 @@ mysql -u root -p"${MYSQL_ROOT_PASSWORD}" <<-EOSQL
     CREATE DATABASE IF NOT EXISTS home_inventory;
     CREATE USER IF NOT EXISTS 'home_inventory'@'%' IDENTIFIED BY '${HOME_INVENTORY_DB_PASSWORD}';
     GRANT ALL PRIVILEGES ON home_inventory.* TO 'home_inventory'@'%';
+    CREATE DATABASE IF NOT EXISTS home_coffing;
+    CREATE USER IF NOT EXISTS 'home_coffing'@'%' IDENTIFIED BY '${HOME_COFFING_DB_PASSWORD}';
+    GRANT ALL PRIVILEGES ON home_coffing.* TO 'home_coffing'@'%';
+
     FLUSH PRIVILEGES;
 EOSQL

@@ -5,6 +5,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       HOME_INVENTORY_DB_PASSWORD: ${HOME_INVENTORY_DB_PASSWORD}
+      HOME_COFFING_DB_PASSWORD: ${HOME_COFFING_DB_PASSWORD}
     volumes:
       - ~/.db/mysql:/var/lib/mysql
       - ../db/scripts:/docker-entrypoint-initdb.d
